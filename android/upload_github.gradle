@@ -1,0 +1,19 @@
+apply plugin: 'maven-publish'
+
+publishing {
+    publications {
+        gpr(MavenPublication) {
+            groupId project.GROUP_ID
+            artifactId project.ARTIFACT_ID
+            version project.VERSION
+            
+            artifact("$buildDir/outputs/aar/${project.getName()}-release.aar")
+
+            pom {
+                name = 'hummer-android'
+                description = 'hummer'
+                url = project.GITHUB_REPO_URL
+            }
+        }
+    }
+}

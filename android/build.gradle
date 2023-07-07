@@ -24,6 +24,15 @@ allprojects {
         mavenCentral()
 //        mavenLocal()
         jcenter()
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/yearsyan/hummer")
+            credentials {
+                username = project.GITHUB_USER
+                password = project.findProperty("gpr.key") ?: System.getenv("GH_PACKAGES_TOKEN")
+            }
+        }
+        maven { url "https://jitpack.io" }
     }
 }
 
