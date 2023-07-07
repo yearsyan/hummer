@@ -17,16 +17,16 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
 
-    - name: chang dir
-      run: cd android
-
     - name: Grant execute permission for gradle
       run: chmod +x ./gradlew
+      working-directory: android
 
     - name: Grant execute permission for script
       run: chmod +x ./upload_github.sh
+      working-directory: android
 
     - name: Run Script
       env:
         GH_PACKAGES_TOKEN: ${{ secrets.TOKEN }}
       run: ./upload_github.sh
+      working-directory: android
