@@ -1,7 +1,6 @@
 apply plugin: 'com.android.library'
 apply from: '../module.gradle'
 apply from: '../upload.gradle'
-apply plugin: 'com.github.dcendents.android-maven'
 
 if (project.COMPILE_JS_ENGINE == 'All') {
     apply from: 'fetch_jsc_libs.gradle'

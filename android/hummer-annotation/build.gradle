@@ -1,6 +1,5 @@
 apply plugin: 'java-library'
 apply from: 'upload.gradle'
-apply plugin: 'com.github.dcendents.android-maven'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
